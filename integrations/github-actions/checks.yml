@@ -1,0 +1,38 @@
+name: Validate skills and plugin packages
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm test
+      - run: npm run check:public
+      - run: npm run package:chatgpt
+      - name: Check packaged ChatGPT instructions
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, zipfile
+          for path in Path('dist').glob('*.zip'):
+              with zipfile.ZipFile(path) as archive:
+                  assert 'plugin.json' in archive.namelist()
+                  manifest = json.loads(archive.read('plugin.json'))
+                  ui = manifest['extensions']['com.openai']['interface']
+                  assert ui['logo'].removeprefix('./') in archive.namelist()
+                  for name in archive.namelist():
+                      assert not name.startswith('/') and '..' not in Path(name).parts
+                      if name.endswith('.md'):
+                          text = archive.read(name).decode()
+                          assert 'utm_' not in text
+                          assert 'www.geminilaunch.com/pricing' not in text
+                          assert 'Outside ChatGPT' not in text
+          print('Plugin archive checks passed.')
+          PY

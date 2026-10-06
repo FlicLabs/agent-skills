@@ -1,0 +1,4 @@
+interface:
+  display_name: "FaceSearchAI API Integration"
+  short_description: "Build secure integrations with the paid API"
+  default_prompt: "Use $facesearchai-api-integration to complete the requested API integration."

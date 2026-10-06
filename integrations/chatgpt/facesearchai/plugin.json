@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "facesearchai-developer",
+  "version": "1.0.0",
+  "description": "Build and test server-side integrations with FaceSearchAI's paid API using mock fixtures.",
+  "author": { "name": "FaceSearchAI", "url": "https://www.facesearchai.com" },
+  "homepage": "https://www.facesearchai.com/api-access",
+  "repository": "https://github.com/FlicLabs/agent-skills",
+  "license": "MIT",
+  "keywords": ["api", "developer", "integration"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "FaceSearchAI Developer",
+        "shortDescription": "Build paid API integrations",
+        "longDescription": "Help developers build server-side FaceSearchAI API integrations. Includes a dependency-free adapter, response normalization, secret-storage guidance, and charge-aware error handling. Test with mock responses and synthetic fixtures. This plugin does not perform biometric searches, identify people in photos, collect API keys in chat, or initiate purchases. Production service usage requires an existing API entitlement.",
+        "developerName": "FaceSearchAI",
+        "category": "Developer Tools",
+        "capabilities": ["Code"],
+        "websiteURL": "https://www.facesearchai.com",
+        "supportURL": "https://www.facesearchai.com/faq",
+        "privacyPolicyURL": "https://www.facesearchai.com/privacy",
+        "termsOfServiceURL": "https://www.facesearchai.com/terms-of-service",
+        "defaultPrompt": ["Add FaceSearchAI's paid API to my server using mock responses.", "Check my API integration for accidental retries and key exposure."],
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/logo.png"
+      },
+      "publication": { "release_notes": "Initial skills-only developer package with secure server adapter and mocked verification. No direct search connector or digital checkout." }
+    }
+  }
+}

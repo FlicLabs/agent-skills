@@ -1,0 +1,4 @@
+interface:
+  display_name: "GeminiLaunch Update"
+  short_description: "Maintain existing websites with paid editing access"
+  default_prompt: "Use $geminilaunch-update to complete the requested website workflow."

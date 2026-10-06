@@ -1,0 +1,4 @@
+interface:
+  display_name: "GeminiLaunch Publish"
+  short_description: "Publish static websites and verify social cards"
+  default_prompt: "Use $geminilaunch-publish to complete the requested website workflow."
