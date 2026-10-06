@@ -13,7 +13,7 @@
       "interface": {
         "displayName": "GeminiLaunch",
         "shortDescription": "Publish and maintain websites",
-        "longDescription": "Publish supported HTML, React code, or static ZIP websites through GeminiLaunch. Maintain existing sites, preserve their addresses, and verify public content and social images. Connect your existing account through OAuth. Custom URLs on your own domain and site editing require existing paid account entitlements. Domain setup uses the authenticated GeminiLaunch dashboard; the connector cannot change domain bindings or manage billing.",
+        "longDescription": "Publish supported HTML, React code, or static ZIP websites through GeminiLaunch. Maintain existing sites, preserve their addresses, and verify public content and social images. Connect your existing account through OAuth. Custom URL setup and site editing depend on your account's existing entitlements and available domain capacity. Domain setup uses the authenticated GeminiLaunch dashboard; the connector cannot change domain bindings or manage billing.",
         "developerName": "GeminiLaunch",
         "category": "Developer Tools",
         "capabilities": ["Read", "Write"],
