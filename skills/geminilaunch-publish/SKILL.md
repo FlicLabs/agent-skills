@@ -23,7 +23,9 @@ Discover the connected tools and their input schemas before invoking them. The d
 
 ## Entitlements and domains
 
-GeminiLaunch has a free publishing tier. Do not describe a free publish or installing this skill as a paid transaction. Custom domains, editing, and higher limits depend on account entitlements. Use the service's current response as the authority; prices and plan names can change.
+Publishing to a custom URL on the user's own domain requires an existing paid GeminiLaunch account with an available custom-domain entitlement. Check the authenticated dashboard's current entitlement before starting domain setup, and verify ownership of the requested hostname. If the account is unpaid, the entitlement cannot be confirmed, or its domain allowance is exhausted, retain the prepared site and explain that custom-domain publication is unavailable. Do not attach a domain or silently substitute a free address.
+
+GeminiLaunch's default service subdomains remain available on its free publishing tier. Installing this skill is free. Editing and higher limits also depend on account entitlements. Use the service's current response as the authority; prices and plan names can change.
 
 Do not invent a publish fee, bypass account limits, or create replacement projects to evade a paid editing requirement. If the user asks for a custom domain, use the dashboard's domain verification flow; the MCP connector cannot change domain bindings. DNS changes must preserve unrelated records and require an exact intended hostname.
 

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "geminilaunch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Publish and maintain static websites with GeminiLaunch's existing OAuth connector.",
   "author": { "name": "GeminiLaunch", "url": "https://www.geminilaunch.com" },
   "homepage": "https://www.geminilaunch.com/mcp",
@@ -13,7 +13,7 @@
       "interface": {
         "displayName": "GeminiLaunch",
         "shortDescription": "Publish and maintain websites",
-        "longDescription": "Publish supported HTML, React code, or static ZIP websites through GeminiLaunch. Maintain existing sites, preserve their addresses, and verify public content and social images. Connect your existing account through OAuth. Available operations depend on the account's current entitlements. The connector cannot change domain bindings or manage billing.",
+        "longDescription": "Publish supported HTML, React code, or static ZIP websites through GeminiLaunch. Maintain existing sites, preserve their addresses, and verify public content and social images. Connect your existing account through OAuth. Custom URLs on your own domain and site editing require existing paid account entitlements. Domain setup uses the authenticated GeminiLaunch dashboard; the connector cannot change domain bindings or manage billing.",
         "developerName": "GeminiLaunch",
         "category": "Developer Tools",
         "capabilities": ["Read", "Write"],
@@ -43,7 +43,7 @@
           ]
         }
       },
-      "publication": { "release_notes": "Initial package reusing the existing OAuth MCP endpoint and static website publishing workflows. Review scenarios are provided; execution requires a dedicated reviewer account and sample fixtures." }
+      "publication": { "release_notes": "Clarifies that custom URLs on a user's own domain require an existing paid account with domain capacity, while default service subdomains retain their free tier. Preserves the existing OAuth MCP integration. Review scenarios are provided; execution requires a dedicated reviewer account and sample fixtures." }
     }
   }
 }

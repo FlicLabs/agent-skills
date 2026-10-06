@@ -30,6 +30,14 @@ Browse on skills.sh: [publish](https://www.skills.sh/FlicLabs/agent-skills/gemin
 
 The skills are free to install. Product subscriptions and credits are billed by the respective service, not by skills.sh. Setup links include campaign parameters to distinguish visits originating from these skills; the package does not send telemetry, photos, API keys, or results to a separate analytics service.
 
+Custom URLs on a customer's own domain require an existing paid GeminiLaunch account with available domain capacity. The publishing skill checks the authenticated entitlement before domain setup; it keeps the prepared site when access is unavailable. GeminiLaunch's default service subdomains retain their free tier. FaceSearchAI production usage requires the customer's existing paid API credits.
+
+## Measure discovery and revenue
+
+skills.sh reports aggregate installs; installs are not skill executions, website visits, or revenue. Its [official API](https://www.skills.sh/docs/api) exposes deduplicated counts using a Vercel OIDC token. With a valid `VERCEL_OIDC_TOKEN` already available in your server environment, run `npm run stats:skills` to append a timestamped count snapshot under the ignored `evidence/` directory. The command reports missing skills as unavailable rather than zero and never saves the token. No scheduled monitoring or production dashboard is installed by this package.
+
+For the full funnel, measure tagged visits on the product websites, retain the campaign attribution through account signup under the sites' existing privacy policies, and join that attribution to confirmed paid subscription or credit events on the server. Measure successful paid edits/custom-domain actions and charged API requests separately. These links are already tagged; signup and revenue attribution still need instrumentation in the product applications. Do not include photos, result identities, API keys, or search queries in analytics. ChatGPT packages omit campaign parameters and purchase directions.
+
 ## Connect GeminiLaunch
 
 Remote MCP endpoint: `https://www.geminilaunch.com/api/mcp`.
