@@ -26,6 +26,8 @@ npx skills add FlicLabs/agent-skills --skill facesearchai-api-integration
 
 Examples: “Publish this static site on GeminiLaunch.” “Update my existing GeminiLaunch site with the new opening hours.” “Add FaceSearchAI's paid API to my server; test it with mocked responses.”
 
+Browse on skills.sh: [publish](https://www.skills.sh/FlicLabs/agent-skills/geminilaunch-publish) · [update](https://www.skills.sh/FlicLabs/agent-skills/geminilaunch-update) · [FaceSearchAI integration](https://www.skills.sh/FlicLabs/agent-skills/facesearchai-api-integration).
+
 The skills are free to install. Product subscriptions and credits are billed by the respective service, not by skills.sh. Setup links include campaign parameters to distinguish visits originating from these skills; the package does not send telemetry, photos, API keys, or results to a separate analytics service.
 
 ## Connect GeminiLaunch
@@ -53,6 +55,8 @@ npm run package:chatgpt
 ```
 
 This generates two ZIPs under `dist/`: GeminiLaunch with its existing OAuth MCP endpoint and two skills; FaceSearchAI Developer as a skills-only developer integration. Generated packages remove purchase directions and campaign parameters from ChatGPT instructions.
+
+A [GitHub Actions workflow template](integrations/github-actions/checks.yml) is included. Automated checks run through the commands above; the workflow template is not active in this repository because the available GitHub credential cannot create workflow files.
 
 ChatGPT currently permits access to existing paid accounts but prohibits selling digital subscriptions or credits, including freemium upsells. The plugin packages do not include checkout tools or promote upgrades. The FaceSearchAI package is a developer workflow; a direct-search ChatGPT app would need OAuth and privacy review. [OpenAI plugin guidelines](https://developers.openai.com/plugins/plugin-guidelines)
 
